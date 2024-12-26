@@ -1,20 +1,25 @@
 import Link from 'next/link'
+import './globals.css'
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
         <header className="bg-gray-800 text-white p-4">
-          <nav>
+          <nav className="flex gap-x-6"> {/* Added flex and gap-x-6 */}
             <Link href="/" className="font-bold">
               My Next.js Site
+            </Link>
+            <Link href="/about" className="hover:text-gray-300">
+              About
+            </Link>
+            <Link href="mailto:alexbaben@aol.com" className="hover:text-gray-300">
+              Email Me
             </Link>
           </nav>
         </header>
         <main>{children}</main>
-        <footer className="bg-gray-100 p-4 text-center">
-          <p>© 2024 My Next.js Site</p>
-        </footer>
+        {/* ... existing code ... */}
       </body>
     </html>
   )
